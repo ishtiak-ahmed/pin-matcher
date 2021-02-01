@@ -10,6 +10,7 @@ const Buttons = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0', 'C', '<']
 let generateBtn = document.querySelector('.generate-btn');
 let calcArea = document.querySelector('.calc-body');
 const userPin = document.getElementById('userPin');
+const showPin = document.getElementById('showPin');
 const sumbitBtn = document.querySelector('.submit-btn');
 
 // Pin
@@ -29,7 +30,7 @@ calcArea.addEventListener('click', (event) => {
 sumbitBtn.addEventListener('click', () => {
     print('pin is verifying..');
     if (userInput == generatedPin) {
-        print('pin matched')
+        alert('pin matched')
     } else {
         print('Pin didnt match');
         tryLeft--;
@@ -44,7 +45,7 @@ sumbitBtn.addEventListener('click', () => {
 
 generateBtn.addEventListener('click', () => {
     generatedPin = generatePin();
-    print(generatedPin);
+    showPin.value = generatedPin;
 })
 
 const generatePin = () => {
